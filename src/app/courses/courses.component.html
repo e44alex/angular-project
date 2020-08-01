@@ -1,0 +1,14 @@
+<div class="card-columns">
+    <div *ngFor="let course of courses" class="card" style="width: 25rem;">
+        <div class="card-header">
+            <img class="card-image-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Vefsnfjorden.jpg/362px-Vefsnfjorden.jpg" alt="">
+            <h4 class="card-title">{{course}}</h4>
+        </div>
+        <div class="card-body">
+            <p class="card-text">{{courseDesc }}</p>
+        </div>
+        <div class="card-footer">
+            <a href="#">more</a>
+        </div>
+    </div>
+</div>
