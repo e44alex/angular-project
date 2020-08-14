@@ -1,3 +1,5 @@
+<input [(ngModel)]="email" (keyup.enter)="onKeyUp();" class="form-control"/>
+
 <div class="card-columns">
     <div *ngFor="let course of courses" class="card" style="width: 25rem;">
         <div class="card-header">
