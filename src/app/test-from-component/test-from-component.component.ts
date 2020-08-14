@@ -7,13 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestFromComponentComponent implements OnInit {
 
-  firstName: string;
-  lastName: string;
-  email: string;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  log(x): void {
+    console.log(x);
+  }
+
+  OnSubmit(form): void {
+    if (!form.valid) {
+      alert('form is not valid');
+    }
+    else{
+      console.log(form.value);
+    }
   }
 
 }

@@ -1,20 +1,31 @@
-<form (ngSubmit)="onSubmit()" #form="ngForm">
-  <div class="form-group">
-    <label for="firstName">First Name</label>
-    <input type="text"
-      class="form-control" name="firstName" id="firstName" aria-describedby="helpId" placeholder="First Name">
-    <small id="helpId" class="form-text text-muted">Help text</small>
-  </div>
-  <div class="form-group">
-    <label for="lastName">Last Name</label>
-    <input type="text"
-      class="form-control" name="lastName" id="lastName" aria-describedby="helpId" placeholder="Last Name">
-    <small id="helpId" class="form-text text-muted">Help text</small>
-  </div>
-  <div class="form-group">
-    <label for="email">E-mail</label>
-    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder="E-mail">
-    <small id="emailHelpId" class="form-text text-muted">Help text</small>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+<div class="form-block">
+  <form  #f="ngForm" (ngSubmit)="OnSubmit(f)" #form="ngForm">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input required type="text"
+        class="form-control" ngModel name="firstName" #firstName="ngModel" id="firstName" aria-describedby="helpId" placeholder="First Name">
+      <div class="alert alert-danger" role="alert" *ngIf="firstName.touched && !firstName.valid">
+        <strong>First Name is required</strong>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input required type="text"
+        class="form-control" ngModel name="lastName" #lastName="ngModel"  id="lastName" aria-describedby="helpId" placeholder="Last Name">
+      <div class="alert alert-danger" role="alert" *ngIf="lastName.touched && !lastName.valid">
+        <strong>Last Name is required</strong>
+      </div>
+      </div>
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input required type="email" class="form-control" ngModel name="email" #email="ngModel"  id="email" aria-describedby="emailHelpId" placeholder="E-mail">
+      <div class="alert alert-danger" role="alert" *ngIf="email.touched && !email.valid">
+        <strong>Email is required</strong>
+      </div>
+    </div>
+    <div class="col-md-3 m-auto">
+      <button type="submit" class="btn btn-primary " [disabled]="!f.valid">Submit</button>
+    </div>
+  </form>
+
+</div>

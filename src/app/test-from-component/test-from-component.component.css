@@ -1,0 +1,19 @@
+.form-block{
+  height:auto;
+  width: 550px;
+  align-self: center;
+  margin: auto;
+  padding: 10px;
+}
+
+.centered{
+  margin: auto;
+}
+
+.form-control.ng-touched.ng-invalid{
+  border: 2px solid red;
+}
+
+.form-control.ng-touched.ng-valid{
+  border: 2px solid green;
+}
