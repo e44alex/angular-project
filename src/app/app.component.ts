@@ -1,4 +1,3 @@
-import { CoursesComponent } from './courses/courses.component';
 import { Component } from '@angular/core';
 import { NgbDropdown } from '@ng-bootstrap/ng-bootstrap';
 
@@ -6,7 +5,8 @@ import { NgbDropdown } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+
 })
 export class AppComponent {
   title = 'my-first-app';

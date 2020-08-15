@@ -1,9 +1,13 @@
+import { fade } from './../animations';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-test-from-component',
   templateUrl: './test-from-component.component.html',
-  styleUrls: ['./test-from-component.component.css']
+  styleUrls: ['./test-from-component.component.css'],
+  animations: [
+    fade
+  ]
 })
 export class TestFromComponentComponent implements OnInit {
 
