@@ -1,5 +1,7 @@
+import { HomeComponent } from './home/home.component';
+import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,6 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CoursesComponent } from './courses/courses.component';
 import { FormsModule } from '@angular/forms';
 import { TestFromComponentComponent } from './test-from-component/test-from-component.component';
+import { AnimationsComponent } from './animations/animations.component';
 
 
 
@@ -14,13 +17,21 @@ import { TestFromComponentComponent } from './test-from-component/test-from-comp
   declarations: [
     AppComponent,
     CoursesComponent,
-    TestFromComponentComponent
+    TestFromComponentComponent,
+    AnimationsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([
+      {path: '', component: HomeComponent},
+      {path: 'form', component: TestFromComponentComponent},
+      {path: 'courses', component: CoursesComponent},
+      {path: 'animations', component: AnimationsComponent}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
